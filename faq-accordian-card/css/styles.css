@@ -1,0 +1,216 @@
+
+:root {
+    /* Primary Colors */
+    --dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    /* Neutral Colors */
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    --light-grayish-blue: hsl(240, 5%, 91%);
+    /* Gradient Colors */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+
+    --shadow: 1px 35px 0px hsla(243, 73%, 64%, .1);
+}
+
+body {
+    
+    background: var(--soft-violet);
+    background: linear-gradient(180deg, var(--soft-violet) 0%, var(--soft-blue) 100%);
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: .75rem;
+}
+
+.container {   
+    margin: 0 auto;
+    width: 90%;
+}
+
+.accordion-img {}
+
+.illustration.mobile {
+    display: block;
+    margin: 0 auto;
+    padding-right: 2.5em;
+    transform: translateY(7em);
+}
+
+
+.illustration.desktop,
+.box {
+    display: none;
+}
+
+.drop-shadow {
+    filter: drop-shadow(var(--shadow));
+  }
+
+main {
+    background-color: white;
+    border-radius: 24px;
+    padding: 9.25em 0 3em;
+
+    box-shadow: 0 50px 50px -20px hsla(261, 75%, 27%, .5);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.accordion {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 1.5em;
+}
+
+
+.accordion-title {
+    text-align: center;
+}
+
+.accordion-label,
+.accordion-content {
+    border-bottom: 1px solid var(--light-grayish-blue);
+    padding: 1.25em;
+    padding-left: 0;
+}
+
+.accordion-label {
+    display: block;
+    color: #021516;
+    cursor: pointer;
+    position: relative;
+}
+
+.accordion-label::after {
+    content: url(../images/icon-arrow-down.svg);
+    float: right;
+}
+
+.accordion-label:hover
+.accordion-label:focus {
+    color: var(--soft-red);
+}
+
+.accordion-content {
+    display: none;
+    background: white;
+    line-height: 1.6;
+}
+
+.accordion-input {
+    /* Uncomment the display:none style to hide the Checkbox */
+    display: none;
+}
+
+.accordion-input:checked ~ .accordion-content {
+    display: block;
+}
+
+.accordion-input:checked ~ .accordion-label {
+    border: none;
+    font-weight: 700;
+    padding-bottom: 0;
+}
+
+.accordion-input:checked ~ .accordion-label::after {
+    transform: rotate(180deg);
+}
+
+img {
+    max-width: 100%;
+}
+
+.attribution {
+    color: white;
+    font-size: 11px;
+    margin-top: 3em;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--light-grayish-blue);
+}
+
+/************ Media Queries ************/
+@media (min-width:48em) {
+    .container {
+        width: 80%;
+    }
+
+    .accordion {
+        padding: 2em 4em;
+    }
+}
+
+@media (min-width:64em) {
+    body {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .page-wrapper {
+        margin: 0 4em;
+        position: relative;
+    }
+    .container {
+        background-color: white;
+        background-image: url(../images/bg-pattern-desktop.svg);
+        background-position: left -110% bottom 50%;
+        background-repeat: no-repeat;
+        background-size: 70%;
+        border-radius: 24px;
+        box-shadow: 0 50px 50px -20px hsla(261, 75%, 27%, .5);
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    main {
+        box-shadow: none;
+        background-color: transparent;
+        padding-top: 3em;
+        width: 70%;
+    }
+
+    .accordion {
+        background-color: transparent;
+    }
+
+    .accordion-title {
+        padding-left: 4em;
+        text-align: left;
+    }
+ 
+    .accordion-content {
+       width: 350px; 
+    }
+
+    .illustration.mobile {
+        display: none;
+    }
+
+    .illustration.desktop {
+        display: block;
+        transform: translate(-5em, 7em);
+    }
+
+
+    .box-holder {
+        position: absolute;
+        left: -5.5em;
+        top: 48%;
+        z-index: 5;
+    }
+
+    .box {
+        display: block;
+        width: 70%;
+    }
+}
