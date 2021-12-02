@@ -1,0 +1,135 @@
+
+:root {
+    /* Primary Colors */
+    --primary-color: hsl(12, 94%, 65%);
+    --secondary-color: hsl(177, 68%,64%);
+    --tertiary-color: hsl(33, 100%, 70%);
+    /* Neutral Colors */
+    --color-light: hsl(20, 33%,98%);
+    --color-dark: hsl(244, 23%, 12%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+
+/*************** Features Styles  *****************/
+.features {
+    display: grid;
+    /* grid-template-columns: 102px 312px 155px 446px 95px; */
+    grid-template-columns:  1fr 209px 1fr;
+    grid-template-rows: 8% 332px 4% 543px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin: 0 auto;
+    width: 375px;
+}
+    
+.phone-app {
+    grid-area: 1 / 2 / 3 / 3; 
+}
+
+.product-info {
+    grid-area: 4 / 1 / 5 / 4; 
+}
+
+.color-block {
+    grid-area: 2 / 1 / 4 / 4;
+    background-color: black;
+    border-radius: 12px;
+    height: 600px;
+}
+
+.pattern {
+    grid-area: 2 / 1 / 4 / 4; 
+    margin: 0 auto;
+} 
+
+.product-info {
+    background-color: var(--primary-color);
+}
+
+/*************** Media Queries  *****************/
+@media (min-width: 48em) {
+    .features {
+        display: grid;
+        grid-template-columns:  9% 25% 14% 44% 8%;
+        grid-template-rows: 17% 18% 32% 22% 11%;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin: 0 auto;
+        width: 696px;
+    }
+        
+    .phone-app {
+        grid-area: 1 / 2 / 4 / 4; 
+    }
+    
+    .product-info {
+        grid-area: 3 / 3 / 6 / 5; 
+    }
+    
+    .color-block {
+        grid-area: 2 / 1 / 5 / 6; 
+    }
+    
+    .pattern {
+        grid-area: 2 / 2 / 4 / 4; 
+        margin-left: 8.5em;
+        margin-top: -1.5em;
+    } 
+    
+    .product-info {
+        background-color: var(--primary-color);
+    }
+}
+
+
+@media (min-width: 71em) {
+    .features {
+        display: grid;
+        grid-template-columns: 10% 28% 14% 40% 8%;
+        grid-template-rows: 23% 10% 36% 18.5% 12.5%;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin: 0 auto;
+        max-width: 1110px;
+    }
+        
+    .phone-app {
+        grid-area: 1 / 2 / 4 / 3; 
+    }
+    
+    .product-info {
+        grid-area: 3 / 4 / 6 / 5; 
+    }
+    
+    .color-block {
+        grid-area: 2 / 1 / 5 / 6; 
+    }
+    
+    .pattern {
+        grid-area: 2 / 2 / 4 / 4; 
+        margin-left: 11.5em;
+        margin-top: -2em;
+    } 
+    
+    .product-info {
+        background-color: var(--primary-color);
+    }
+}
