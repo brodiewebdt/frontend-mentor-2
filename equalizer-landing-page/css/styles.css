@@ -15,7 +15,11 @@
     box-sizing: border-box;
 }
 
+/*************** General Styles  *****************/
 body {
+    background-image: url(../images/bg-main-mobile.png);
+    /* background-position: bottom 10vh; */
+    background-repeat: no-repeat;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.25rem;
     line-height: 1.7;
@@ -24,19 +28,86 @@ body {
 
 .container {
     margin: 0 auto;
-    width: 90%;
+    /* max-width: 400px; */
+    padding: 0 1.5em;
+    width: 375px;
+}
+
+.logo {
+    margin: 2.5em 0 4em;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.btn {
+    border-radius: 12px;
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.8;
+    padding: 1.1em 0;
+    text-align: center;
+}
+
+.btn-ios {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    margin-bottom: 1em;
+}
+
+.btn-ios:hover,
+.btn-ios:focus {
+    background-color: var(--secondary-color);
+}
+
+.btn-android {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    margin-bottom: 2.5em;
+}
+
+.btn-android:hover,
+.btn-android:focus {
+   background-color: var(--tertiary-color); 
+}
+
+.btn img {
+    display: inline-block;
+}
+
+/*************** Hero  *****************/
+.hero {
+    margin-bottom: 4.25em;
+}
+h1.main-title {
+   font-size: 2.5rem;
+   font-weight: 700;
+   letter-spacing: -1px;
+   line-height: 1; 
+   margin-bottom: .5em;
+}
+
+p.main-subtitle {
+    font-size: 1rem;
+    line-height: 1.625;
 }
 
 
 /*************** Features Styles  *****************/
 .features {
     display: grid;
-    /* grid-template-columns: 102px 312px 155px 446px 95px; */
     grid-template-columns:  1fr 209px 1fr;
-    grid-template-rows: 8% 332px 4% 543px;
+    grid-template-rows: 92px 332px 45px 580px;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    margin: 0 auto;
+    margin: 0 auto 4em;
     width: 375px;
 }
     
@@ -52,20 +123,86 @@ body {
     grid-area: 2 / 1 / 4 / 4;
     background-color: black;
     border-radius: 12px;
-    height: 600px;
+    height: 400px;
 }
 
 .pattern {
     grid-area: 2 / 1 / 4 / 4; 
     margin: 0 auto;
 } 
-
+/* Product Info Box Styles */
 .product-info {
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
     background-color: var(--primary-color);
+    color: white;   
+    padding: 2.5em;
 }
+
+h2.features-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: .375em;
+}
+
+p.features-info {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-bottom: 2em;
+}
+
+p.price {
+    display: flex;
+    align-items: center;
+   line-height: 1.6; 
+   margin-bottom: 1.6em;
+}
+
+p.price span {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: .8;
+    margin-right: .25em;
+}
+
+/*************** Footer Styles  *****************/
+.footer-logo {
+    margin-bottom: 2em;
+}
+
+.footer-info {
+    font-size: 1rem;
+    line-height: 1.625;
+    margin-bottom: 4em;
+}
+
+.footer-info a {
+    color: var(--color-dark);
+    font-weight: 700;
+}
+
+.social ul {
+    display: flex;
+    gap: 1.25em;
+    margin-bottom: 5em;
+}
+
+.social-links img:hover,
+.social-links img:focus {
+    filter: invert(57%) sepia(50%) saturate(1643%) hue-rotate(326deg) brightness(100%) contrast(97%); 
+}
+
+
 
 /*************** Media Queries  *****************/
 @media (min-width: 48em) {
+    body {
+        background-image:  url(../images/bg-pattern-1.svg), url(../images/bg-main-tablet.png);
+        background-position: right top, top left;
+        background-repeat: no-repeat;
+    }
     .features {
         display: grid;
         grid-template-columns:  9% 25% 14% 44% 8%;
