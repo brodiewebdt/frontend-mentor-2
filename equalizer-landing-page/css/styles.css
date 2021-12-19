@@ -18,7 +18,6 @@
 /*************** General Styles  *****************/
 body {
     background-image: url(../images/bg-main-mobile.png);
-    /* background-position: bottom 10vh; */
     background-repeat: no-repeat;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.25rem;
@@ -28,13 +27,12 @@ body {
 
 .container {
     margin: 0 auto;
-    /* max-width: 400px; */
     padding: 0 1.5em;
-    width: 375px;
+    width: 90%;
 }
 
 .logo {
-    margin: 2.5em 0 4em;
+    margin: 2.5em 0 3em;
 }
 
 a {
@@ -103,31 +101,28 @@ p.main-subtitle {
 /*************** Features Styles  *****************/
 .features {
     display: grid;
-    grid-template-columns:  1fr 209px 1fr;
-    grid-template-rows: 92px 332px 45px 580px;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    margin: 0 auto 4em;
-    width: 375px;
+    grid-template-columns: minmax(3rem, 1fr) minmax(17.3rem, 2fr) minmax(3rem, 1fr);
+    grid-template-rows: 6.125rem max-content 3rem 13.75rem max-content;
 }
     
 .phone-app {
-    grid-area: 1 / 2 / 3 / 3; 
+    grid-area: 1 / 2 / 3 / 3;
+    justify-self: center; 
+    width: 208px;
 }
 
 .product-info {
-    grid-area: 4 / 1 / 5 / 4; 
+    grid-area: 3 / 1 / 6 / 4; 
 }
 
 .color-block {
-    grid-area: 2 / 1 / 4 / 4;
+    grid-area: 2 / 1 / 5 / 4;
     background-color: black;
     border-radius: 12px;
-    height: 400px;
 }
 
 .pattern {
-    grid-area: 2 / 1 / 4 / 4; 
+    grid-area: 2 / 2 / 4 / 3; 
     margin: 0 auto;
 } 
 /* Product Info Box Styles */
@@ -137,7 +132,7 @@ p.main-subtitle {
     flex-direction: column;
     background-color: var(--primary-color);
     color: white;   
-    padding: 2.5em;
+    padding: 2.5em 2.5em 0;
 }
 
 h2.features-title {
@@ -168,6 +163,10 @@ p.price span {
 }
 
 /*************** Footer Styles  *****************/
+footer {
+    margin-top: 4em;
+}
+
 .footer-logo {
     margin-bottom: 2em;
 }
@@ -200,64 +199,142 @@ p.price span {
 @media (min-width: 48em) {
     body {
         background-image:  url(../images/bg-pattern-1.svg), url(../images/bg-main-tablet.png);
-        background-position: right top, top left;
+        background-position: right -2em top -2em, top center;
         background-repeat: no-repeat;
+        background-size: 232px 374px, cover;
     }
+
+    .container {
+        padding: 0;
+    }
+
+    .logo {
+        margin-bottom: 4.75em;
+    }
+
+    /*************** Hero  *****************/
+    .hero {
+        margin-bottom: 5.25em;
+        width: 32.5em;
+    }
+
+    h1.main-title {
+        font-size: 4rem; 
+        margin-bottom: .5em;
+    }
+
+    p.main-subtitle {
+        font-size: 1.125rem;
+        line-height: 1.555;
+    }
+
+    /*************** Features Styles  *****************/
     .features {
         display: grid;
-        grid-template-columns:  9% 25% 14% 44% 8%;
-        grid-template-rows: 17% 18% 32% 22% 11%;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
+        grid-template-columns: minmax(4rem, 6.3rem) minmax(11rem, 19.5rem) minmax(5.93rem, 1fr) minmax(19rem, 27.9rem) minmax(3.625rem, 5.9rem);
+        grid-template-rows: 8.625rem 2.43rem 6.93rem 16.75rem 2.125rem 9.25rem max-content;
+        
         margin: 0 auto;
         width: 696px;
     }
         
     .phone-app {
-        grid-area: 1 / 2 / 4 / 4; 
+        grid-area: 1 / 2 / 4 / 4;
+        height: 556px; 
+        width: 270px;
     }
     
     .product-info {
-        grid-area: 3 / 3 / 6 / 5; 
+        grid-area: 4 / 3 / 6 / 5; 
+        height: 546px;
+        width: 400px;
+        background-color: var(--primary-color);
+        padding-bottom: 1em;
     }
     
     .color-block {
         grid-area: 2 / 1 / 5 / 6; 
+
+        height: 600px;
+        width: 696px;
     }
     
     .pattern {
-        grid-area: 2 / 2 / 4 / 4; 
+        grid-area: 2 / 2 / 6 / 4; 
         margin-left: 8.5em;
         margin-top: -1.5em;
     } 
-    
-    .product-info {
-        background-color: var(--primary-color);
+
+    /*************** Footer Styles  *****************/
+    .footer {
+        margin-top: 9em;
+    }
+
+    .footer-block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 80em) {
+    .hero {
+        margin-left: 1.7em;
+        width: 40em;
     }
 }
 
 
-@media (min-width: 71em) {
+@media (min-width: 90em) {
+    .container {
+        margin: 0 8em;
+    }
+
+    .logo {
+        margin-bottom: 6.35em;
+    }
+
+
+    /*************** Hero  *****************/
+    .hero {
+        width: 51.5em;
+    }
+
+    h1.main-title {
+        font-size: 5.5rem;
+        margin-bottom: .5em;
+    }
+
+    p.main-subtitle {
+        font-size: 1.25rem;
+        line-height: 1.7;
+    }
+
+    /*************** Features Styles  *****************/
     .features {
         display: grid;
-        grid-template-columns: 10% 28% 14% 40% 8%;
-        grid-template-rows: 23% 10% 36% 18.5% 12.5%;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
+        grid-template-rows: 13.3rem 2.3rem 3.3rem 17rem 4.2rem 10.7rem max-content;
         margin: 0 auto;
-        max-width: 1110px;
+        width: 1110px;
     }
         
     .phone-app {
         grid-area: 1 / 2 / 4 / 3; 
+        height: 642px; 
+        width: 312px;
     }
     
     .product-info {
-        grid-area: 3 / 4 / 6 / 5; 
+        grid-area: 4 / 4 / 6 / 5;
+        height: 625px;
+        width: 446px;
+        background-color: var(--primary-color);
+        padding-bottom: 3em; 
     }
     
     .color-block {
-        grid-area: 2 / 1 / 5 / 6; 
+        grid-area: 2 / 1 / 6 / 8;
+        width: 1110px; 
     }
     
     .pattern {
@@ -265,8 +342,34 @@ p.price span {
         margin-left: 11.5em;
         margin-top: -2em;
     } 
-    
-    .product-info {
-        background-color: var(--primary-color);
+
+    h2.features-title {
+        font-size: 2.5rem;
+    }
+
+    p.features-info {
+        font-size: 1.25rem;
+        line-height: 1.7;
+    }
+
+    /*************** Footer Styles  *****************/
+    .footer-container {
+        display: flex;
+        align-items: center;
+        gap: 8.5em;
+        margin-bottom: 5em;
+    }
+
+    .footer-block {
+        align-items: center;
+        flex: 0 0 800px;
+    }
+
+    .footer-info {
+        margin-bottom: 0;
+    }
+
+    .social ul {
+        margin-bottom: 0;
     }
 }
