@@ -411,6 +411,10 @@ nav {
     flex-direction: row;
   }
 
+  form.error button {
+    height: 37.39px;
+  }
+
   .form-input {
     display: flex;
     flex-direction: column;
