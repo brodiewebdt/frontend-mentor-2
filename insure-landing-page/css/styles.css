@@ -456,7 +456,8 @@ footer {
         background-repeat: no-repeat;
         background-position: bottom left;
         position: absolute;
-        bottom: 168px;
+        bottom: 400px;
+        bottom: 25em;
         left: 0;
         height: 100%;
         width: 100%;
@@ -469,10 +470,9 @@ footer {
         background-repeat: no-repeat;
         background-position: top right;
         position: absolute;
-        top: 82px;
-        right: -96px;
-        left: 10px;
-        height: 392px;
+        top: 5em;
+        left: -7px;
+        height: 400px;
         width: 100%;
         z-index: 1;
     }
