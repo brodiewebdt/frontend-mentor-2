@@ -222,11 +222,17 @@ nav li a {
 	}
 
 
-	nav ul a {
+	nav ul.show a {
 		color: #fff;
 	}
 
-	.btn-reverse {
+    nav ul.show a:hover,
+    nav ul.show a:focus {
+		color: #fff;
+	}
+
+	nav ul.show .btn-ghost {
+        background-color: transparent;
 		border-color: #fff;
 		color: #fff;
 	}
@@ -329,6 +335,11 @@ footer {
 
 .footer-links:last-child {
     margin-bottom: 3em;
+}
+
+.footer-links:hover,
+.footer-links:focus {
+    text-decoration: underline;
 }
 
 .social-link {
@@ -460,12 +471,11 @@ footer {
         position: absolute;
         top: 82px;
         right: -96px;
-        height: 492px;
+        left: 10px;
+        height: 392px;
         width: 100%;
         z-index: 1;
     }
-    
-    
 
     .hero-line::before {
         content: "";
