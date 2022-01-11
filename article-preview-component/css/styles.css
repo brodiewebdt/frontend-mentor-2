@@ -26,6 +26,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: var(--light-gray-blue);
     font-family: 'Manrope', sans-serif;
     font-size: .8125rem;
 }
@@ -44,6 +45,7 @@ a:focus {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
+    background-color: #fff;
     box-shadow: 0 40px 40px -1px var(--shadow-color);
     margin: 0 auto;
     max-width: 327px;
