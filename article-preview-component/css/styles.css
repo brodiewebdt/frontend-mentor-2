@@ -1,0 +1,259 @@
+
+
+:root {
+    --dark-gray-blue: hsl(217, 19%, 35%);
+    --dark-blue: hsl(214, 17%, 51%);
+    --gray-blue: hsl(212, 23%, 69%);
+    --light-gray-blue: hsl(210, 46%, 95%);
+    --hover-color: hsl(162,82%,60%);
+    --shadow-color: hsla(210, 29%, 84%, .5)
+
+
+
+}
+
+*, 
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*********** General Styles ***************/
+body {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Manrope', sans-serif;
+    font-size: .8125rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a:hover,
+a:focus {
+    color: var(--hover-color);
+}
+
+/*********** General Card Styles ***************/
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 40px 40px -1px var(--shadow-color);
+    margin: 0 auto;
+    max-width: 327px;
+    width: 100%;
+}
+
+.card-img img {
+    border-radius: 10px 10px 0 0;
+    display: block;
+    width: 100%;
+}
+
+.card-content {
+    padding: 2.5em 2em;
+}
+
+.card-title {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: .75em;
+}
+
+.card-body {
+    line-height: 1.54;
+    
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    padding: 0 2em 1.25em;
+    position: relative;
+}
+
+/*********** Author Styles ***************/
+.author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .5em;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    gap: .25em;
+}
+
+.author-img {
+    border-radius: 50%;
+    height: auto;
+    margin-right: 1em;
+    width: 40px;
+}
+
+.author-name {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.article-date {
+    color: var(--gray-blue);
+    font-weight: 200;
+}
+
+/*********** Share Bar Styles ***************/
+.share-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-gray-blue);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 2.5em;
+    line-height: 2.2em;
+    margin-left: auto;
+    margin-top: 1em;
+    width: 2.5em;
+    z-index: 2;
+}
+
+.share-mobile {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    background-color: var(--dark-gray-blue);
+    border-radius: 0 0 10px 10px;
+    color: var(--gray-blue);
+    padding: 1.5em 2em;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+/*********** Share Bar Display Styles ***************/
+.share-mobile {
+    display: none;
+}
+
+.share-desktop {
+    display: none;
+}
+
+.desktop-active {
+    display: none;
+}
+
+.mobile-active {
+    display: flex;
+}
+
+/*********** Share Bar Social Styles ***************/
+.share span {
+    letter-spacing: 5px;
+}
+
+.share .active {
+    display: block;
+}
+
+.social {
+    display: flex;
+    font-size: 1.4rem;
+    gap: 1em;
+}
+
+.social-link {
+    color: var(--light-gray-blue);
+}
+
+
+/*********** Media Queries ***************/
+@media (min-width: 800px) {
+    /**** General Card Styles ****/ 
+    .card {
+        flex-direction: row;
+        max-width: 730px;
+    } 
+
+    .card-img img {
+        border-radius: 10px 0 0 10px;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 2em;
+    }
+
+    .card-title {
+        font-size: 1.5em;
+        line-height: 1.4;
+        margin-bottom: 1em;
+    }
+
+    .card-body {
+        line-height: 1.5;
+        margin-bottom: 1.5em;
+    }
+
+    .card-footer {
+        margin-top: auto;
+        overflow: initial;
+    }
+
+    .author-info {
+        margin-right: 13em;
+    }
+    
+    /**** Share Bar Display Styles ****/ 
+    .share-mobile {
+        display: none;
+    }
+
+    .share-desktop {
+        display: none;
+    }
+
+    .desktop-active {
+        display: flex;
+    }
+
+    .mobile-active {
+        display: none;
+    }
+    
+
+    /**** Desktop Share Bar Styles ****/ 
+    .share-desktop {
+        position: absolute;
+        left: 278px;
+        top: -88px;
+        align-items: center;
+        gap: 1em;
+        background-color: var(--dark-gray-blue);
+        border-radius: 10px;
+        color: var(--gray-blue);
+        padding: 1.5em 2em;
+        text-transform: uppercase;
+        width: 250px;
+    }
+
+    .triangle {
+        border: 15px solid transparent;
+        border-top-color: var(--dark-gray-blue);
+        height: 20px;
+        width: 20px;
+        transform: translateY(50px);
+        margin-left: -10em;
+    }
+}
