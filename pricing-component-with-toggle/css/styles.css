@@ -1,0 +1,249 @@
+
+:root {
+    /* Primary Colors */
+    --primary-gradient: linear-gradient(90deg, hsl(236, 72%, 79%) 0%, hsl(237, 63%, 64%) 100%);
+    --light-grayish-blue: hsl(240, 78%, 98%);
+    --grayish-blue: hsl(233, 13%, 49%);
+    --dark-grayish-blue: hsl(232, 13%, 33%);
+    --dark-violet: hsl(237, 63%, 64%);
+    --light-violet: hsl(237, 68%, 86%);
+    --border-color: hsl(0, 0%, 59%);
+    --shadow-color: hsla(243, 61%, 89%, .5);
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/************ General Styles  ************/
+body {
+    background-color: var(--light-grayish-blue);
+    background: url(../images/bg-top.svg);
+    background-position: top -50px right -160px;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .9375rem;
+    margin: 0;
+}
+
+h1 {
+  color: var(--grayish-blue);
+  font-size: 2rem;
+  margin: 4rem 0 2.5rem;
+}
+
+h2 {
+  font-size: 1.125rem;
+  margin-bottom: 1.33rem;
+}
+
+span.price {
+  color: var(--dark-grayish-blue);
+  font-size: 4.5rem;
+  letter-spacing: -2.16px;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.featured span {
+  color: var(--light-grayish-blue);
+}
+
+ul {
+  border-top: 1px solid var(--border-color);
+  color: var(--grayish-blue);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+li {
+  border-bottom: 1px solid var(--border-color);
+  padding: .8rem 0;
+}
+
+li:last-child {
+  margin-bottom: 2rem;
+}
+
+.featured ul {
+  border-top: 1px solid var(--light-grayish-blue);
+  color: var(--light-grayish-blue);
+}
+
+.featured li {
+  border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+a {
+  font-size: .8125rem;
+  text-decoration: none;
+}
+
+.btn {
+  border-radius: 6px;
+  padding: .75rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.btn-dark {
+  background: var(--primary-gradient);
+  border: 1px solid var(--dark-violet);
+  color: var(--light-grayish-blue);
+}
+
+.btn-dark:hover,
+.btn-dark:focus {
+  background: transparent;
+  border: 1px solid var(--dark-violet);
+  color: var(--dark-violet);
+}
+
+.btn-light {
+  background-color: var(--light-grayish-blue);
+  border: 1px solid var(--light-grayish-blue);
+  color: var(--dark-violet);
+}
+
+.btn-light:hover,
+.btn-light:focus {
+  background: transparent;
+  border: 1px solid var(--light-grayish-blue);
+  color: var(--light-grayish-blue);
+}
+
+/************ Toggle Switch Styles *************/
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+ /* The switch - the box around the slider */
+ .switch {
+  position: relative;
+  display: inline-block;
+  height: 34px;
+  width: 60px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  height: 0;
+  opacity: 0;
+  width: 0;
+}
+
+input:focus + .slider::before {
+  border:2px solid #000;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: var(--primary-gradient);
+  cursor: pointer;
+  transition: .4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  background-color: white;
+  height: 26px;
+  width: 26px;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background: var(--primary-gradient);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
+
+
+.product-intro {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+/************ Pricing Table *************/
+.pricing-table {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pricing-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px var(--shadow-color);
+  margin-bottom: 2rem;
+  padding: 2.3rem 2rem;
+  width: 350px;
+}
+
+.featured {
+  background: var(--primary-gradient);
+  color: var(--light-grayish-blue);
+}
+
+/************ Media Queries *************/
+@media (min-width:1100px) {
+  body {
+    background: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
+    background-position: top -50px right -160px, bottom 50px left 0px;
+    background-repeat: no-repeat;
+  }
+
+  .pricing-table {
+    flex-direction: row;
+  }
+
+  .pricing-card:not(.featured) {
+    margin-bottom: 0;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .pricing-card:last-child {
+    border-radius: 0 10px 10px 0;
+  }
+
+  .featured {
+    padding: 3.5rem 2rem;
+    margin: 0;
+  }
+}
+
+
