@@ -142,8 +142,8 @@ a {
   width: 0;
 }
 
-input:focus + .slider::before {
-  border:2px solid #000;
+input:focus-visible + .slider::before {
+  outline:2px solid #000;
 }
 
 /* The slider */
