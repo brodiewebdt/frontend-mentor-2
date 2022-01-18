@@ -1,0 +1,207 @@
+
+:root {
+    /* Primary Colors */
+    --dark-blue: hsl(240 ,38%, 20%);
+    --grayish-blue: hsl(240, 18%, 77%);
+    --shadow-color-10: hsla(240 ,38%, 20%, .1);
+    --shadow-color-30: hsla(240 ,38%, 20%, .3);
+    --shadow-color-50: hsla(240 ,38%, 20%, .5);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+.container {
+    background: url(../images/pattern-curve.svg) #fff;
+    background-position: bottom -80px left -138px;
+    background-repeat: no-repeat;
+    box-shadow: 0 10px 30px -10px var(--shadow-color-30);
+    margin: 5rem auto 0;
+    padding: 1.5rem 0 3rem;
+    width: 375px;
+}
+
+img {
+    max-width: 100%;
+    height: 254px;
+    width: 254px;    
+}
+
+.photo {
+    border-radius: 8px;
+    box-shadow: 0 40px 50px -30px var(--shadow-color-50);
+    margin: 2em 0 4em;
+    margin: 2rem auto;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-weight: 300;
+    line-height: 1.33;
+}
+
+h1 {
+    font-size: .9375rem;
+    font-weight: 700;
+}
+
+span {
+    color: var(--grayish-blue);
+    font-size: .9375rem;
+    font-weight: 500;  
+}
+
+.carousel {
+    background-image: url(../images/pattern-bg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.carousel-item,
+.carousel-item-hidden {
+    display: none;
+    width: 100%;
+
+}
+
+.carousel-item-visible {
+    display: block;
+    animation: fadeVisibility 0.5s;
+}
+
+.slider-text {
+    padding-top: 3rem;
+    position: relative;
+}
+
+.slider-text p::before {
+    content: '';
+    position: absolute;
+    background-image: url(../images/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-size: 60px 50px;
+    left: 137px;
+    top: 25px;
+    height: 50px;
+    width: 60px;
+}
+
+.carousel-actions {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 15px 20px -10px var(--shadow-color-10);
+    width: 90px;
+    position: absolute;
+    top: 42%;
+    left: 37%;
+}
+
+#carousel-button-prev {
+    margin-left: .25em;
+}
+
+#carousel-button-next {
+    margin-right: .25em;
+}
+
+button {
+    font-size: 1.4rem;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    width: 2.5em;
+    height: 2.5em;
+    cursor: pointer;
+
+}
+
+@keyframes fadeVisibility {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        background: url(../images/pattern-curve.svg), url(../images/pattern-bg.svg) #fff;
+        background-position: bottom -1px left -32px, top 50px right 50px;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 45%;
+        padding: 5rem 3rem;
+        width: 1200px;
+    }
+
+    .carousel {
+        background: none;
+    }
+
+   .carousel-content {
+       display: flex;
+   }
+
+
+   .carousel-actions {
+       top: 86%;
+       left: 64%;
+   }
+
+   .photo {
+       height: auto;
+       width: 400px;
+   }
+
+   p {
+       font-size: 1.5rem;
+       text-align: left;
+   }
+
+   h1, span {
+       font-size: 1.25rem;
+   }
+
+   .slider-text p::before {
+    content: '';
+    position: absolute;
+    background-image: url(../images/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-size: 120px 100px;
+    left: 70px;
+    top: 100px;
+    height: 100px;
+    width: 120px;
+}
+
+   .slider-text {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       order: -1;
+   }
+
+   .author {
+       display: flex;
+       gap: 1em;
+   }
+}
+
