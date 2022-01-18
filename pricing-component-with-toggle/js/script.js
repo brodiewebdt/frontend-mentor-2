@@ -13,7 +13,6 @@ toggle.addEventListener("click", () => {
         proPlan.textContent = '$24.99'
         masterPlan.textContent = '$39.99'
     } else {
-        console.log('Checkbox is not checked')
         basicPlan.textContent = '$199.99'
         proPlan.textContent = '$249.99'
         masterPlan.textContent = '$399.99'
