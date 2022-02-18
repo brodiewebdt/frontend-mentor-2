@@ -1,0 +1,112 @@
+:root {
+    /* Primary Colors */
+    --clr-light-cyan: hsl(193, 38%, 86%);
+    --clr-neon-green: hsl(150, 100%, 66%);
+    /* Neutral Colors */
+    --clr-dark-blue: hsl(219, 22%, 16%);
+    --clr-grayish-blue: hsl(217, 19%, 38%);
+    --clr-dark-grayish-blue: hsl(217, 19%, 24%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/************* General Layout ************/
+body {
+    background-color: var(--clr-dark-blue);
+    font-family: "Manrope", sans-serif;
+}
+
+main {
+    margin-bottom: 5rem;
+}
+
+/************* Typography ************/
+h1 {
+    color: var(--clr-light-cyan);
+    font-size: 1.5rem;
+    letter-spacing: -0.26px;
+    margin-bottom: 2.5rem;
+}
+
+p {
+    color: var(--clr-neon-green);
+    font-size: 0.6875rem;
+    letter-spacing: 3.46px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+button {
+    background-color: var(--clr-neon-green);
+    border: none;
+    border-radius: 100px;
+    height: 64px;
+    transform: translateY(2rem);
+    width: 64px;
+}
+
+button:hover {
+    box-shadow: 0 0 40px var(--clr-neon-green);
+    cursor: pointer;
+}
+
+.card {
+    background-color: var(--clr-dark-grayish-blue);
+    border-radius: 10px;
+    margin: 7.5rem auto 0;
+    padding: 2.5rem 1.5rem 0;
+    text-align: center;
+    width: 21.5rem;
+}
+
+.divider-mobile {
+    display: block;
+    margin: 0 auto;
+}
+
+.divider-desktop {
+    display: none;
+    margin: 0 auto;
+}
+
+footer {
+    color: var(--clr-light-cyan);
+    text-align: center;
+}
+
+/************* Footer Styles ************/
+footer a {
+    color: var(--clr-neon-green);
+    text-decoration: none;
+}
+
+/************* Media Queries ************/
+@media (min-width: 37.5em) {
+    p {
+        font-size: 0.8125rem;
+        letter-spacing: 4.09px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        letter-spacing: -0.3px;
+    }
+
+    .card {
+        margin: 13.93755rem auto 0;
+        padding: 3rem 3rem 0;
+        width: 33.75rem;
+    }
+
+    .divider-mobile {
+        display: none;
+    }
+
+    .divider-desktop {
+        display: block;
+    }
+}
