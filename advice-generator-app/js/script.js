@@ -3,6 +3,15 @@
 
 document.querySelector(".btn-submit").addEventListener('click', () => {
     
+    getAdvice()
+    
+})
+
+window.onload = function () {
+    getAdvice();
+}
+
+async function getAdvice() {
     fetch("https://api.adviceslip.com/advice")
         .then((response) => response.json())
         .then((data) => {
@@ -10,5 +19,4 @@ document.querySelector(".btn-submit").addEventListener('click', () => {
             document.querySelector(".advice-number").textContent = data.slip.id;
             document.querySelector(".advice").textContent = data.slip.advice;
         });
-    
-})
+}
